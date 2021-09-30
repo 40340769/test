@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for
 app = Flask(__name__)
 
 @app.route("/")
@@ -8,6 +8,13 @@ def root():
 @app.route("/hello/")
 def hello():
     return "Hello Napier!"
+
+@app.route("/static-image/")
+def static_image():
+    start = '<img src="'
+    url = url_for('static',filename='widzew.jpg')
+    end = '" />'
+    return start+url+end,200 
 
 @app.route("/goodbye/")
 def goodbye():
