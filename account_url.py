@@ -1,5 +1,9 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
+
+@app.route("/")
+def hi():
+    return "Hello there"
 
 @app.route("/hello/<name>")
 def hello(name):
