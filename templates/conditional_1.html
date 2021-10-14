@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+{% if (user_t.name and user_t.club) %}
+	<h1>Your favourite club {{ user_t.name }} is {{ user_t.club }}!</h1>
+{% elif user_t.name %}
+	<h1>Hello {{ user_t.name }}!</h1>
+{% else %}
+	<h1>Hello from Napier!</h1>
+{% endif %}
+</html>
